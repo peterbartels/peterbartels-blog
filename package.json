@@ -14,7 +14,6 @@
     "gatsby-plugin-typescript": "^2.1.2",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-sharp": "^2.2.6",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -24,7 +23,7 @@
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/node": "^12.7.1",
-    "@types/react": "^16.9.1",
+    "@types/react": "^16.9.2",
     "@types/react-dom": "^16.8.5",
     "@types/react-helmet": "^5.0.9",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
@@ -43,7 +42,9 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:es": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:js": "tslint -p . 'src/**/*.ts{,x}'",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
