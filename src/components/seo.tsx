@@ -26,11 +26,11 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  if(!metaDescription){
+  if (!metaDescription) {
     return null
   }
   return (
-      <Helmet
+    <Helmet
       htmlAttributes={{
         lang,
       }}
