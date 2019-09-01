@@ -9,15 +9,23 @@ import React, { FunctionComponent } from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-export interface Props {
-  description?: string
-  lang?: string
-  meta?: any[]
-  title: string
+export type Props = {
+  readonly description?: string
+  readonly lang?: string
+  readonly meta?: readonly HTMLMetaElement[]
+  readonly title: string
+  readonly author?: string
 }
 
-const SEO: FunctionComponent<Props> = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+const SEO: FunctionComponent<Props> = ({
+  description = "",
+  lang = "en",
+  meta = [],
+  title,
+}) => {
+  const { site } = useStaticQuery<{
+    readonly site: { readonly siteMetadata: Props }
+  }>(
     graphql`
       query {
         site {
@@ -32,9 +40,7 @@ const SEO: FunctionComponent<Props> = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  if (!metaDescription) {
-    return null
-  }
+
   return (
     <Helmet
       htmlAttributes={{
@@ -78,12 +84,6 @@ const SEO: FunctionComponent<Props> = ({ description, lang, meta, title }) => {
       ].concat(meta)}
     />
   )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 }
 
 export default SEO

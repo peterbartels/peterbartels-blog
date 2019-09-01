@@ -1,7 +1,11 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { FunctionComponent } from "react"
 
-const Header = ({ siteTitle }: { siteTitle: string }) => (
+export type Props = {
+  readonly siteTitle: string
+}
+
+const Header: FunctionComponent<Props> = ({ siteTitle }) => (
   <header
     style={{
       background: `rebeccapurple`,

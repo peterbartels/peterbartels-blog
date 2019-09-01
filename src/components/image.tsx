@@ -1,6 +1,14 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
+
+export type ImageFluidType = {
+  readonly placeholderImage: {
+    readonly childImageSharp: {
+      readonly fluid: FluidObject
+    }
+  }
+}
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,8 +21,8 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
+const Image: FunctionComponent = () => {
+  const data = useStaticQuery<ImageFluidType>(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
