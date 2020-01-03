@@ -31,5 +31,16 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'xw24a3gm',
+        dataset: 'production',
+        // a token with read permissions is required
+        // if you have a private dataset
+        // currenyly this is a public dataset
+        // token: process.env.MY_SANITY_TOKEN,
+      },
+    },
   ],
 }
