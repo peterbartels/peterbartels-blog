@@ -1,0 +1,14 @@
+/* 
+  converts the default rem calculations to the same for pixels 
+*/
+html { font-size:  6.25%; } /* default font-size for root is 16px, so make it 1/16=0.0625 */
+
+body {
+    font-size: 14px; /* fallback to px for older browser */
+    font-size: 14rem;
+} /* =14px by default */
+
+h1   {
+    font-size: 24px;
+    font-size: 24rem;
+} 
