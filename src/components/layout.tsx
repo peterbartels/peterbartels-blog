@@ -10,6 +10,11 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import "./styles.css"
+
+/**
+ * TODO: add menu with react motion
+ */
 
 const Layout: FunctionComponent = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,9 +40,9 @@ const Layout: FunctionComponent = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          {new Date().getFullYear()}, 
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Peter Bartels</a>
         </footer>
       </div>
     </>
