@@ -4,13 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'role',
-      title: 'Role',
+      name: 'company',
+      title: 'Company',
       type: 'string'
     },
     {
-      name: 'company',
-      title: 'Company',
+      name: 'role',
+      title: 'Role',
       type: 'string'
     },
     {

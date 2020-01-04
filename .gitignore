@@ -12,7 +12,7 @@ _node_modules
 licence.key
 yarn-error.log
 npm-debug.log*
-./dist/
+dist/
 coverage
 cypress/videos
 cypress/images

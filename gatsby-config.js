@@ -42,5 +42,13 @@ module.exports = {
         // token: process.env.MY_SANITY_TOKEN,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Raleway', 'Kalam']
+        }
+      }
+    },
   ],
 }
