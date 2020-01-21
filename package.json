@@ -6,8 +6,10 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "@types/styled-components": "^4.4.2",
     "gatsby": "^2.13.62",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-manifest": "^2.2.5",
@@ -23,11 +25,14 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-use-typewriter": "^1.0.0-alpha.3",
     "styled-components": "^4.3.2",
     "styled-system": "^5.1.1",
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
     "@types/classnames": "^2.2.9",
     "@types/node": "^12.7.1",
     "@types/react": "^16.9.2",
@@ -40,6 +45,7 @@
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-functional": "^1.0.0-rc.2",
     "eslint-plugin-prettier": "^3.0.1",
+    "gatsby-plugin-mdx": "^1.0.67",
     "prettier": "^1.18.2"
   },
   "keywords": [
