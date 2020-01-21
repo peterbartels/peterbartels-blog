@@ -1,89 +1,65 @@
 import React, { FunctionComponent } from "react"
-import { Link } from "gatsby"
-import styled from 'styled-components'
+import { useStaticQuery, graphql } from "gatsby"
+//import { Link } from "gatsby"
+//import Layout from "../components/layout"
+//import Image from "../components/image"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useTypewriter from 'react-use-typewriter'
+library.add(fab, faCheckSquare, faCoffee)
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import {
+  Centered,
+  NameContainer,
+  Name,
+  TyperContainer,
+  HeaderContainer,
+  Header,
+  MenuItem,
+  Icons,
+  ContentContainer,
+  Content,
+  FooterContainer,
+  Footer
+} from '../components/styles'
 
-
-const HeaderContainer = styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  width:100%;
-  padding:0px 10px 0px 10px;
-  background: #353434;
-`
-
-const NameContainer = styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  background: #353434;
-`
-
-const MainContainer = styled.div`
-  height:100%;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-`
-
-const Name = styled.div`
-  color: #FFFFFF;
-  font-family: 'Kalam';
-  font-size: 2rem;;
-  padding:30px 0px 30px 15px;
-  
-`
-const Container = styled.div`
-  display:flex;
-  max-width:1200px;
-  width:100%;
-`
-
-const Header = styled.div`
-  display:flex;
-  max-width:1200px;
-  width:100%;
-  background: #454545;
-  padding:15px 15px 15px 15px;
-  border-radius: 5px 5px 0px 0px;
-`
-
-const Main = styled.div`
-  display:flex;
-  max-width:1200px;
-  width:100%;
-  background: #ffffff;
-  padding:15px;
-  height:100%;
-`
-
-const MenuItem = styled.div`
-  color:white;
-  font-family: 'Raleway';
-  color:white;
-  text-transform: uppercase;
-  font-size:0.9rem;
-  font-weight:bold;
-  margin-right:2rem;
-`
-
-
+const MyPageLayout = () => {
+  const data = useStaticQuery(graphql`
+    query MDXQuery($id: String) {
+      mdx(
+        id: { eq: $id }
+        frontmatter: { title: { eq: "Homepage" } }
+      ) {
+        id
+        body
+      }
+    }
+  `)
+  console.log(data)
+  return <MDXRenderer>{data.mdx.body}</MDXRenderer>
+}
 
 const IndexPage: FunctionComponent = () => {
+
+  const typerWords = ["react", "typescript", "nodejs"];
+  const currentTyperWord = useTypewriter(typerWords, 100, true, 500);
+
   return (<>
     <SEO title="Home" />
     <NameContainer>
-      <Container>
+      <Centered>
         <Name>
           Peter Bartels
         </Name>
-      </Container>
+        <TyperContainer>
+          <div>{currentTyperWord}<span className="cursor">|</span></div>
+        </TyperContainer>
+      </Centered>
     </NameContainer>
     <HeaderContainer>
       <Header>
@@ -102,20 +78,37 @@ const IndexPage: FunctionComponent = () => {
         <MenuItem>
           contact
         </MenuItem>
+        <Icons>
+          <a href="https://www.linkedin.com/in/peterbartels/"><FontAwesomeIcon icon={["fab", "linkedin"]} style={{ color: "#FFFFFF" }} size="2x" /></a>
+          <a href="https://github.com/peterbartels/"><FontAwesomeIcon icon={["fab", "github"]} style={{ color: "#FFFFFF" }} size="2x" /></a>
+        </Icons>
       </Header>
     </HeaderContainer>
-    <MainContainer>
-      <Main>
-        t
-      </Main>
-    </MainContainer>
-    <MainContainer>
-      <Container>
+    <ContentContainer>
+      <Content>
+        <MyPageLayout />
+      </Content>
+    </ContentContainer>
+    <FooterContainer>
+      <Footer>
         test111111111111111111
-      </Container>
-    </MainContainer>
+      </Footer>
+    </FooterContainer >
   </>
   )
 }
 
-export default IndexPage
+//TODO: Pass icons to list and move from css file to styled-components
+const MyH1 = (props: any) => <h1 {...props} />
+const MyParagraph = (props: any) => <p style={{ fontSize: "1rem" }} {...props} />
+
+const components = {
+  h1: MyH1,
+  p: MyParagraph,
+}
+
+export default ({ children }: any) => (
+  <MDXProvider components={components}>
+    <IndexPage />
+  </MDXProvider>
+)
