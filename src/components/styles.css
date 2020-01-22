@@ -31,46 +31,9 @@ body > div, body > div > div {
   font-family: 'Raleway';
 }
 
-div > ul > li {
-  border: solid 1px #DDDDDD;
-  box-shadow: 0 .25rem .125rem 0 #eeeeee;
-  border-radius: 0px 0px 5px 5px;
-  background-color:#eee;
-  padding: 8px;
-  min-width:400px;
-  flex:1 0 calc(25% - 10px);
-  margin: 5px;
-}
-
-div ul > li li {
-  border: none;
-  display:block;
-  
-}
-
-li, ul {
-  padding:0px;
-}
-
-li {
-  color: #495057;
-  list-style-type: none;
-  font-weight: bold;
-}
-
-li li {
-  font-weight: normal;
-}
-
 h1, h2 {
   font-size: 1.6rem;
   color:#0B7285;
-}
-
-div > ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between
 }
 
 a {
@@ -88,8 +51,5 @@ a {
 }
 
 .cursor {
-  border-radius: 0.3vw;
-  width: 0.3vw;
-  height: 5vw;
   animation: blink 1s linear infinite forwards;
 }

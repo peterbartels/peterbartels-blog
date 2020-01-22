@@ -5,6 +5,7 @@ pageTitle: "Homepage"
 ---
 
 import { GatsbyjsIcon } from '../components/styles.tsx'
+import { Box, Card, Heading, Image, Flex, Text } from 'rebass'
 
 # Hi, I am Peter Bartels!
 
@@ -13,36 +14,91 @@ I'm a passionate freelance software engineer, husband, father and cooking lover.
 The latest projects I have been working on:
 
 ## Open Source Projects
+<Flex flexWrap='wrap'>
 
-* This site is open source! check it out on github: https://github.com/peterbartels/peterbartels-blog
-  * A static SPA that can be hosted on a serverless platform
-  * Using mdx (markdown + jsx)
-  * Headless CMS (using stackedit.io as MDX editor and sanity.io for organised content such as resume and blog)
-  * Gatsby js, typescript, react, graphql, styled-components
+<Box
+  p={1}
+  width={[ 1, 1, 1/2 ]}>
+<Card mx='auto' style={{ boxShadow: '0px 0px 9px 0.5px rgba(0,0,0,0.5)' }} p={2}>
 
-* Small react hook (typewriter effect) I created (seen at the top right)
-  * check it out here: [react-use-typewriter](https://github.com/peterbartels/react-use-typewriter)
+**This site is open source**
 
+<Text>  
+
+* A static SPA that can be hosted on a serverless platform
+* Using mdx (markdown + jsx)
+* Headless CMS (using stackedit.io as MDX editor and sanity.io for organised content such as resume and blog)
+* Gatsby js, typescript, react, graphql, styled-components
+* https://github.com/peterbartels/peterbartels-blog  
+  
+</Text>
+</Card>
+</Box>
+
+<Box
+  p={1}
+  width={[ 1, 1, 1/2 ]}>
+
+**React hook: typewriter effect**
+* Extremely lightweight and optmized for speed using requestAnimationFrame
+* React, typescript
+* check it out here: [react-use-typewriter](https://github.com/peterbartels/react-use-typewriter)  
+  
+</Box>
+
+<Box
+  p={1}
+  width={1}>
 
 # Latest Experience
 
-* Leaseplan Digital (Profile management) - 1,5 year
-  * Leasecar service, Fleet management
-  * Active in 32 countries
-  * Worked on core functionalities: 
-  * Manage profile, book maintenance and repair, tyre service, pay fines, glass repair, damage report
-  * react, nodejs, typescript, graphql, redux, styled-components
+</Box>
 
-* Delloite (DocFlow and Yearplan) - 2,5 years
-  * Financial services
-  * Active in > 150 countries
-  * Worked on core functionalities: 
-  * DocFlow (managing financial workflows, alerts, approval), Yearplan (business delivery, deadlines)
-  * react, angularjs, C#, nodejs, ES7, SQL Server
+<Box
+  p={1}
+  width={[ 1, 1, 1/2 ]}>
+<Card mx='auto'>
 
-* University Medical Center, Utrecht (GenPres) - 5 years
-  * Generic Prescription System for Intensive care
-  * C#, javascript, SQL Server, JAVA
+**Leaseplan Digital (Profile management) - 1,5 year**
+
+<Text>  
+
+* Leasecar service, Fleet management
+* Active in 32 countries
+* Worked on core functionalities: 
+* Manage profile, book maintenance and repair, tyre service, pay fines, glass repair, damage report
+* react, nodejs, typescript, graphql, redux, styled-components
+  
+</Text>
+</Card>
+</Box>
+
+<Box
+  p={1}
+  width={[ 1, 1, 1/2 ]}>
+
+
+**Delloite (DocFlow and Yearplan) - 2,5 years**
+* Financial services
+* Active in > 150 countries
+* Worked on core functionalities: 
+* DocFlow (managing financial workflows, alerts, approval), Yearplan (business delivery, deadlines)
+* react, angularjs, C#, nodejs, ES7, SQL Server
+  
+</Box>
+
+<Box
+  p={1}
+  width={1}>
+
+
+**University Medical Center, Utrecht (GenPres) - 5 years**
+* Generic Prescription System for Intensive care
+* C#, javascript, SQL Server, JAVA
+  
+</Box>
+
+</Flex>
 
 
 This website is built with gatsby <GatsbyjsIcon />

@@ -32,11 +32,11 @@ export const TyperContainer = styled.div`
   flex:1;
   justify-content: flex-end;
   div {
-    width: 400px;
-    padding: 5px;
-    background: #000;
-    border: 1px solid white;
-    font-weight: bold;
+  width: 400px;
+  padding: 5px;
+  background: #000;
+  border: 1px solid white;
+  font-weight: bold;
   }
 `
 
@@ -83,11 +83,12 @@ export const MainContainer = styled.div`
 
 export const ContentContainer = styled(MainContainer)`
   flex: 1;
+  padding: 0px 10px 0px 10px;
 `
 
 export const Content = styled(Centered)`
   background: #ffffff;
-  padding: 15px;
+  padding: 30px;
   color: black;
   display: block;
 `

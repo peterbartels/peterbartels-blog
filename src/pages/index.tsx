@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 //import { Link } from "gatsby"
 //import Layout from "../components/layout"
-//import Image from "../components/image"
+import Avatar from "../components/avatar"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -47,7 +47,9 @@ const MyPageLayout = () => {
 const IndexPage: FunctionComponent = () => {
 
   const typerWords = ["react", "typescript", "nodejs"];
-  const currentTyperWord = useTypewriter(typerWords, 100, true, 500);
+  const currentTyperWord = useTypewriter({
+    words: typerWords
+  })
 
   return (<>
     <SEO title="Home" />
@@ -86,6 +88,7 @@ const IndexPage: FunctionComponent = () => {
     </HeaderContainer>
     <ContentContainer>
       <Content>
+        <Avatar />
         <MyPageLayout />
       </Content>
     </ContentContainer>
