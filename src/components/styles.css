@@ -3,7 +3,7 @@ html, body {
   height:100%;
   margin:0;
   padding:0;
-  background: #F3F3F3;
+  background: #EEF5FD;
   overflow:auto;
   font-family: "Raleway";
 }
@@ -33,7 +33,7 @@ body > div, body > div > div {
 
 h1, h2 {
   font-size: 1.6rem;
-  color:#0B7285;
+  color:#636D78;
 }
 
 a {

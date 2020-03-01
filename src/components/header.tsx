@@ -1,37 +1,64 @@
-import { Link } from "gatsby"
 import React, { FunctionComponent } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useTypewriter from 'react-use-typewriter'
+
+import {
+  Centered,
+  NameContainer,
+  Name,
+  TyperContainer,
+  HeaderContainer,
+  Header,
+  MenuItem,
+  Icons
+} from './styles'
 
 export type Props = {
   readonly siteTitle: string
 }
 
-const Header: FunctionComponent<Props> = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const HeaderComponent: FunctionComponent<Props> = ({ siteTitle }) => {
 
-export default Header
+  const typerWords = ["react", "typescript", "nodejs"]
+  const currentTyperWord = useTypewriter({
+    words: typerWords
+  })
+
+  return (<>
+    <NameContainer>
+      <Centered>
+        <Name>
+          Peter Bartels
+        </Name>
+        <TyperContainer>
+          <div>{currentTyperWord}<span className="cursor">|</span></div>
+        </TyperContainer>
+      </Centered>
+    </NameContainer>
+    <HeaderContainer>
+      <Header>
+        <MenuItem>
+          home
+        </MenuItem>
+        <MenuItem>
+          resume
+        </MenuItem>
+        <MenuItem>
+          working remotely
+        </MenuItem>
+        <MenuItem>
+          blog
+        </MenuItem>
+        <MenuItem>
+          contact
+        </MenuItem>
+        <Icons>
+          <a href="https://www.linkedin.com/in/peterbartels/"><FontAwesomeIcon icon={["fab", "linkedin"]} style={{ color: "#FFFFFF" }} size="2x" /></a>
+          <a href="https://github.com/peterbartels/"><FontAwesomeIcon icon={["fab", "github"]} style={{ color: "#FFFFFF" }} size="2x" /></a>
+        </Icons>
+      </Header>
+    </HeaderContainer>
+  </>)
+}
+
+export default HeaderComponent

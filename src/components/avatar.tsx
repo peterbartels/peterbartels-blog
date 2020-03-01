@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img, { FixedObject } from "gatsby-image"
+import Img, { GatsbyImageProps } from "gatsby-image"
 
-export type ImageFluidType = {
+export type ImageFixedProps = {
   readonly file: {
-    readonly childImageSharp: {
-      readonly fixed: FixedObject
-    }
+    readonly childImageSharp: GatsbyImageProps
   }
 }
 
@@ -22,18 +20,18 @@ export type ImageFluidType = {
  */
 
 const Image: FunctionComponent = () => {
-  const data = useStaticQuery<ImageFluidType>(graphql`
+  const data = useStaticQuery<ImageFixedProps>(graphql`
     query {
       file(relativePath: { eq: "peterbartels.jpg" }) {
         childImageSharp {
-          fixed(width: 300, height: 300, quality: 100) {
+          fixed(width: 200, height: 200, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
-  console.log(data)
+
   return <Img fixed={data.file.childImageSharp.fixed} style={{ borderRadius: "50%" }} />
 }
 

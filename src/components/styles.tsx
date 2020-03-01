@@ -11,12 +11,12 @@ export const HeaderContainer = styled.div`
   ${columnFlexCss}
   width: 100%;
   padding: 0px 10px 0px 10px;
-  background: #353434;
+  background: #21252A;
 `
 
 export const NameContainer = styled.div`
   ${columnFlexCss}
-  background: #353434;
+  background: #21252A;
 `
 
 export const Name = styled.div`
@@ -34,8 +34,8 @@ export const TyperContainer = styled.div`
   div {
   width: 400px;
   padding: 5px;
-  background: #000;
-  border: 1px solid white;
+  background: #394048;
+
   font-weight: bold;
   }
 `
@@ -64,7 +64,7 @@ export const Centered = styled.div`
 `
 
 export const Header = styled(Centered)`
-  background: #454545;
+  background: #394048;
   padding:15px 15px 15px 15px;
   border-radius: 5px 5px 0px 0px;
   a {

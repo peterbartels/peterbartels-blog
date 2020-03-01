@@ -5,16 +5,25 @@ pageTitle: "Homepage"
 ---
 
 import { GatsbyjsIcon } from '../components/styles.tsx'
+import Avatar from "../components/avatar"
 import { Box, Card, Heading, Image, Flex, Text } from 'rebass'
+
+<Flex flexWrap='wrap'>
+<Box flex={[1, 1, 1]}>
+    <Avatar />
+</Box>
+
+<Box width="auto">
 
 # Hi, I am Peter Bartels!
 
 I'm a passionate freelance software engineer, husband, father and cooking lover. I like to work on challenging projects and I am based in Changsha, China.
+    
+</Box>
 
 The latest projects I have been working on:
 
 ## Open Source Projects
-<Flex flexWrap='wrap'>
 
 <Box
   p={1}
