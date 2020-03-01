@@ -1,21 +1,21 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
+    <img alt="peter" src="https://media-exp1.licdn.com/dms/image/C4E03AQGGph95klM7mA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=rF6h0EGkWcIXP1nA8lnABvTghpGU3iAXqfQ9_vSdnhI" width="60" />
 </p>
+
+# this is a work in progress!
 
 # Peter Bartels Blog
 
-*Kick off your blog with this repository, feel free to use it for your own blog.*
+*Kick off your blog with this repository, feel free to use it for your own.*
 
-*2020: this is a work in progress*
+## Description
 
-## Creates a static website that can be hosted in a serverless architecture and uses a headless CMS
+Creates a static website that can be hosted in a serverless architecture using a headless CMS (Gatsby)
 
-***It's using:***  
+***Stack***  
 
-- Gatsbyjs with plugins:
+- Gatsbyjs
+  - graphql
   - image processing
   - mdx
   - font loader / icons
@@ -23,32 +23,13 @@
   - typescript
   - Styled components
   - Rebassjs
-- sanity
+  - functional typescript eslint rules
+- sanity.io (for content editing)
   
-**Page content is stored in MDX (JSX+markdown) files and organized content using a free account on https://sanity.io**
+- **Page content layout is stored in MDX (JSX+markdown) files**
+- **Content/blog is stored at https://sanity.io (free account for small websites)**
 
 # 🚀 Quick start
-
-Cuurently my personal (public) sanity information is configured
-
-Change the following file to update it with your own options:
-
-`gatsby-config.js`
-
-
-```js
-{
-resolve: 'gatsby-source-sanity',
-  options: {
-    projectId: 'xw24a3gm',
-    dataset: 'production',
-
-    // currenyly this is a public dataset
-    // if you have a private dataset
-    // token: process.env.MY_SANITY_TOKEN,
-  }
-}
-```
 
 To start developing:  
 
@@ -68,7 +49,26 @@ or
 
 `sanity start`  
 
-***please see the gatsby and sanity docs for more information***  
+Currently my personal sanity information is configured, this is **public** so it will work
+
+For your own account change the following file with your own projectId:
+
+`gatsby-config.js`
+
+
+```js
+{
+resolve: 'gatsby-source-sanity',
+  options: {
+    projectId: 'xw24a3gm',
+    dataset: 'production',
+
+    // currenyly this is a public dataset
+    // if you have a private dataset
+    // token: process.env.MY_SANITY_TOKEN,
+  }
+}
+```
 
 # Deploy:
 
